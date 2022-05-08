@@ -1,11 +1,7 @@
 * {
   font-family: "Oswald", sans-serif;
-}
-
-.container {
-  width: 960px;
-  padding: 0px 5px;
-  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :focus-visible {
@@ -26,8 +22,65 @@ section {
   margin: 0 auto;
 }
 
+.container {
+  width: 960px;
+  padding: 0px 5px;
+  margin: 0 auto;
+}
+
+.arrow-top {
+  background-image: url(../img/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.arrow-top:focus-visible {
+  outline: none;
+}
+
+.arrow-top.show {
+  display: block;
+}
+
 .header__top {
   border-bottom: 1px solid #828282;
+  position: relative;
+  top: 0px;
+}
+
+.header__top.menuShow {
+  position: fixed;
+  top: 0px;
+  z-index: 16;
+  left: 0px;
+  right: 0px;
+}
+
+.header__top.menuShow .header__nav {
+  background-color: #f6f6f6;
+  height: 50px;
+  line-height: 50px;
+}
+
+.header__top.menuShow .header__nav-ul {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 50px;
+}
+
+.header__top.menuShow .header__nav-ul li {
+  margin: 0px 70px;
 }
 
 .header__nav {
@@ -133,14 +186,14 @@ section {
 }
 
 .about {
-  background-color: #f6f6f6;
+  background-color: #f6f6f6 !important;
   text-align: center;
-  padding: 120px 0px 100px;
+  padding: 60px 0px;
 }
 
 .about__text {
   font-size: 18px;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   margin: 0 auto;
   padding: 20px 0px;
@@ -151,10 +204,7 @@ section {
   margin: 0 auto;
   text-align: center;
   position: relative;
-}
-
-.skills .title {
-  margin-top: 60px;
+  padding: 60px 0px;
 }
 
 .skills .subtitle {
@@ -292,8 +342,8 @@ section {
   width: 800px;
   height: 450px;
   padding: 40px 0px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .porfolio__box-subtitle {
@@ -302,7 +352,7 @@ section {
 
 .porfolio .slider-arrows.slick-arrow {
   position: absolute;
-  top: 45%;
+  top: 35%;
   -webkit-transition: all 1.4s;
   -o-transition: all 1.4s;
   transition: all 1.4s;
@@ -340,8 +390,48 @@ section {
   text-align: -webkit-center;
 }
 
+.certification {
+  margin: 0 auto;
+  padding: 60px 0px;
+}
+
+.certification__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  text-align: center;
+  width: 700px;
+}
+
+.certification__box {
+  margin: 0 auto;
+}
+
+.certification__box-img {
+  padding: 0 10px;
+}
+
+.certification__box-img img {
+  height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.certification__box-name {
+  margin-top: 20px;
+}
+
 .contact {
   padding: 50px 0px;
+  background-color: #fafafa;
 }
 
 .contact__box {
@@ -554,10 +644,6 @@ html {
 /**
  * Remove the margin in all browsers.
  */
-
-body {
-  margin: 0;
-}
 
 /**
  * Render the `main` element consistently in IE.
