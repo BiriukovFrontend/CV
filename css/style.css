@@ -40,6 +40,7 @@ body section {
   bottom: 50px;
   cursor: pointer;
   display: none;
+  z-index: 15;
 }
 
 .arrow-top:focus-visible {
@@ -1129,9 +1130,43 @@ template {
     width: 460px;
   }
 
+  body section {
+    padding: 30px 0px;
+  }
+
+  .header {
+    position: relative;
+  }
+
   .header__top {
-    height: 50px;
+    cursor: pointer;
+    height: 20px;
     border-bottom: none;
+    position: absolute;
+    right: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 40px;
+    z-index: 18;
+  }
+
+  .header__top span {
+    width: 33px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 4px 0px 0px 0px;
   }
 
   .header__nav {
@@ -1168,6 +1203,88 @@ template {
   .header__nav-ul li a {
     margin: 0 auto;
     text-align: center;
+  }
+
+  .header__bottom {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .header__bottom-top {
+    display: block;
+  }
+
+  .header__bottom-title {
+    margin-top: 20px;
+  }
+
+  .header__bottom-lange {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .header__bottom_img {
+    height: 250px;
+  }
+
+  .porfolio__inner {
+    width: 350px;
+  }
+
+  .porfolio__box {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .porfolio__box-web img {
+    max-width: 350px;
+    height: 250px;
+  }
+
+  .porfolio .slider-arrows__right {
+    right: -60px;
+  }
+
+  .porfolio .slider-arrows__left {
+    left: -60px;
+  }
+
+  .certification__inner {
+    width: 450px;
+  }
+
+  .certification__box-img img {
+    height: 240px;
+    width: 333px;
+  }
+
+  .arrow-top {
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .header__top.menuShow {
+    right: 10px;
+    background-color: white;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 50px;
+  }
+
+  .header__top.menuShow span {
+    display: none;
+  }
+
+  .header__top.menuShow .spanMenu {
+    display: block;
+    width: 0px;
+    height: 0px;
+    margin: 0 auto;
+    line-height: 5px;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
 
