@@ -51,6 +51,35 @@ body section {
   display: block;
 }
 
+.header__top.menuFixed {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+  height: 50px;
+  cursor: default;
+}
+
+.nav__menu {
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header__top.menuFixed .nav__burger {
+  display: none;
+}
+
+.header__top.menuFixed .nav__menu {
+  display: block;
+}
+
 .header__top {
   border-bottom: 1px solid #828282;
   position: relative;
@@ -1262,29 +1291,6 @@ template {
   .arrow-top {
     right: 25px;
     bottom: 25px;
-  }
-
-  .header__top.menuShow {
-    right: 10px;
-    background-color: white;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: 50px;
-  }
-
-  .header__top.menuShow span {
-    display: none;
-  }
-
-  .header__top.menuShow .spanMenu {
-    display: block;
-    width: 0px;
-    height: 0px;
-    margin: 0 auto;
-    line-height: 5px;
-    font-weight: bold;
-    cursor: pointer;
   }
 }
 
