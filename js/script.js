@@ -87,6 +87,9 @@ var btn = $('.arrow-top');
  var menuShow = $('.header__top');
  let headerNav = $('.header__nav');
  let navMenu = $('.nav__menu');
+ let navMenuClose = $('.nav__menuClose');
+ let linkburger= $('.header__nav-li a');
+
 $(window).scroll(function() {
 if ($(window).scrollTop() > 300) {
   btn.addClass('show');
@@ -94,15 +97,32 @@ if ($(window).scrollTop() > 300) {
   if ($(this).scrollTop() > 10) {
    menuShow.addClass('menuFixed'); 
   navMenu.click(function(){
-
-$('.header__nav').css({
+    headerNav.css({
 display:'block',
 position:'fixed',
 right: '0px',
 left: '0px',
 top: '0px',
 });
+$('html').css('overflow', 'hidden');
+navMenuClose.css('display', 'block');
+navMenuClose.addClass('active');
+menuShow.css('height', 'auto');
+
+linkburger.click(function(){
+  headerNav.css('display', 'none');
+  navMenuClose.css('display', 'none');
+  $('html').css('overflow', 'auto');
+});
+navMenuClose.click(function(){
+  headerNav.css('display', 'none');
+  navMenuClose.css('display', 'none');
+  $('html').css('overflow', 'auto');
+});
   });
+
+
+
   } 
 else {
   btn.removeClass('show');
