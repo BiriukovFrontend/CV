@@ -57,6 +57,8 @@ body section {
   left: 0px;
   right: 0px;
   background-color: white;
+  -webkit-box-shadow: 0px 6px 10px 1px rgba(250, 0, 4, 0.6);
+          box-shadow: 0px 6px 10px 1px rgba(250, 0, 4, 0.6);
   text-align: center;
   margin: 0 auto;
   height: 50px;
@@ -78,6 +80,43 @@ body section {
 
 .header__top.menuFixed .nav__menu {
   display: block;
+}
+
+.nav__menuClose {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 20px;
+  z-index: 26;
+  cursor: pointer;
+}
+
+.nav__menuClose::after,
+.nav__menuClose::before {
+  position: absolute;
+  top: 13px;
+  right: 0px;
+  height: 4px;
+  background-color: red;
+  content: "";
+  width: 30px;
+}
+
+.nav__menuClose::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav__menuClose::before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.nav__menuClose.active .header__top.menuFixed {
+  height: 10px;
 }
 
 .header__top {
@@ -1224,9 +1263,10 @@ template {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    width: 100%;
+    height: 100vh;
     -webkit-padding-start: 0px;
             padding-inline-start: 0px;
+    z-index: 25;
   }
 
   .header__nav-ul li a {
@@ -1291,6 +1331,10 @@ template {
   .arrow-top {
     right: 25px;
     bottom: 25px;
+  }
+
+  .header__nav html {
+    overflow: hidden;
   }
 }
 
