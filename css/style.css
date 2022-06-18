@@ -61,8 +61,9 @@ body section {
           box-shadow: 0px 6px 10px 1px rgba(250, 0, 4, 0.6);
   text-align: center;
   margin: 0 auto;
-  height: 50px;
+  height: 70px;
   cursor: default;
+  z-index: 30;
 }
 
 .nav__menu {
@@ -119,6 +120,11 @@ body section {
   height: 10px;
 }
 
+.header__top.menuFixed .header__nav-ul {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .header__top {
   border-bottom: 1px solid #828282;
   position: relative;
@@ -155,7 +161,7 @@ body section {
 
 .header__nav {
   font-size: 18px;
-  height: 87px;
+  height: 70px;
 }
 
 .header__nav-ul {
@@ -166,7 +172,7 @@ body section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  line-height: 87px;
+  line-height: 70px;
 }
 
 .header__nav-li a {
@@ -187,6 +193,10 @@ body section {
 
 .header__nav-li a:focus {
   border-bottom: 3px solid red;
+}
+
+.header__bottom {
+  margin-top: 20px;
 }
 
 .header__bottom-top {
